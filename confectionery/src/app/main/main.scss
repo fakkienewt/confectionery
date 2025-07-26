@@ -1,0 +1,144 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes cursiveEntry {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        letter-spacing: -5px;
+    }
+
+    50% {
+        letter-spacing: 2px;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: normal;
+    }
+}
+
+.title {
+    color: #825656;
+    font-family: 'Lucida Handwriting';
+    font-size: 3rem;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    animation: cursiveEntry 1.5s ease-out forwards;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 45px;
+    cursor: pointer;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: #DCA1A1;
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px 0px;
+    gap: 30px;
+    margin-bottom: 40px;
+
+    .categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 20px;
+
+    }
+}
+
+.menu {
+    font-size: 17px;
+    cursor: pointer;
+
+    padding: 7px;
+    border-radius: 15px;
+
+    &:hover {
+        transition: background-color ease-in-out .5s;
+    }
+}
+
+.menu:hover {
+    transform: scale(1.05);
+}
+
+.donate {
+    margin-right: 10px;
+    padding: 8px;
+    border-radius: 15px;
+    background: #FFB5AB;
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    transition: transform 0.2s ease;
+}
+
+.donate:hover {
+    transform: scale(1.05);
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px 0px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 35px;
+    width: 100%;
+}
+
+.image {
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.name {
+    font-size: 25px;
+}
+
+
+.button {
+    width: 100px;
+    padding: 10px;
+    background: #FFB5AB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    margin: 10px;
+    font-size: 17px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    color: white;
+    transition: transform 0.2s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}

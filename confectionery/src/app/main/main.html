@@ -1,0 +1,25 @@
+<div class="title">Handcrafted with Love, Baked with Joy!</div>
+<div id="main">
+    <div class="list">
+        <div class="categories">
+            <div *ngFor="let category of categories"
+                class="menu"
+                (click)="onCategoryClick(category.id)">
+                {{ category.title}}
+            </div>
+        </div>
+        <div class="menu-donate">
+            <div class="menu donate">Donate</div>
+        </div>
+    </div>
+    <div *ngFor="let m of menu"
+        class="items">
+        <img class="image"
+            src="{{m.image}}">
+        <div class="container">
+            <div class="name">{{m.name}}</div>
+            <div class="price">${{m.price}}</div>
+            <div class="button">Order</div>
+        </div>
+    </div>
+</div>
