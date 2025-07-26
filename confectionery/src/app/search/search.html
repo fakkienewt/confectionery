@@ -1,0 +1,12 @@
+<div class="title"
+    (click)="onClick()">Handcrafted with Love, Baked with Joy!</div>
+<div class="items"
+    *ngFor="let result of searchResults">
+    <img class="image"
+        src="{{result.image}}">>
+    <div class="container">
+        <div class="name">{{result.name}}</div>
+        <div class="price">${{result.price}}</div>
+        <div class="button">Order</div>
+    </div>
+</div>

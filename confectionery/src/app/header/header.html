@@ -1,5 +1,5 @@
 <div id="header">
-    <input class="input"
+    <input class="input" #inputValue
         type="text">
-    <div class="button">Search</div>
+    <div class="button" (click)="onClickSearch(inputValue.value)">Search</div>
 </div>
