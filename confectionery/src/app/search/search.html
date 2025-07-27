@@ -3,10 +3,18 @@
 <div class="items"
     *ngFor="let result of searchResults">
     <img class="image"
-        src="{{result.image}}">>
+        src="{{result.image}}">
     <div class="container">
         <div class="name">{{result.name}}</div>
         <div class="price">${{result.price}}</div>
-        <div class="button">Order</div>
+        <div class="button"
+            (click)="onClickNewPage(result.id)">Order</div>
     </div>
+</div>
+
+<div *ngIf="!searchResults.length">
+    <h1 class="not-found-text">Nothing found! Please try again.</h1>
+    <!-- <div class="img">
+        <img class="anime-image"
+            src="/assets/anime.png"> -->
 </div>

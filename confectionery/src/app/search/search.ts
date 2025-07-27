@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -9,18 +9,32 @@ import { Router } from '@angular/router';
 })
 export class Search implements OnInit {
 
+  searchResults: any[] = [];
+  searchQuery: string = '';
+
   constructor(
-    public router: Router,
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
-  searchResults: any[] = [];
-
   ngOnInit(): void {
-    const results = localStorage.getItem('results');
-    this.searchResults = results ? JSON.parse(results) : [];
+    this.route.queryParams.subscribe(params => {
+      const savedResults = localStorage.getItem('searchResults');
+      this.searchResults = savedResults ? JSON.parse(savedResults) : [];
+      this.loadResults();
+    });
+  }
+
+  private loadResults(): void {
+    const savedResults = localStorage.getItem('searchResults');
+    this.searchResults = savedResults ? JSON.parse(savedResults) : [];
   }
 
   onClick(): void {
     this.router.navigate(['/']);
+  }
+
+  onClickNewPage(id: number): void {
+    this.router.navigate([`food/${id}`]);
   }
 }

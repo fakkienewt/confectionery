@@ -23,8 +23,11 @@ export class Header {
     if (!searchValue) return;
     const allItems = this.service.getCategories().flatMap(category => category.menu);
     const results = allItems.filter(item => item.name.toLowerCase().includes(searchValue.toLowerCase()));
-    localStorage.setItem('results', JSON.stringify(results));
-    this.router.navigate(['/search', searchValue]);
-    console.log(searchValue)
+    setTimeout(() => {
+      localStorage.setItem('searchResults', JSON.stringify(results));
+      this.router.navigate(['/search'], {
+        queryParams: { q: searchValue, r: Math.random() } 
+      });
+    }, 50);
   }
 }

@@ -22,7 +22,7 @@ export class Main implements OnInit {
     private route: ActivatedRoute) {
     this.categories = this.service.getCategories();
   }
-  
+
   ngOnInit(): void {
     this.loadAllMenu();
   }
@@ -37,4 +37,9 @@ export class Main implements OnInit {
     this.afterClickOnCagegory = this.categories.find(c => c.id === this.selectedCategoryId);
     this.menu = this.afterClickOnCagegory.menu;
   }
+
+  onClickNewPage(id: number): void {
+    this.router.navigate([`food/${id}`]);
+  }
+
 }

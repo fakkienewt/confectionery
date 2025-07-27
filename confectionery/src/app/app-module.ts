@@ -8,6 +8,8 @@ import { Main } from './main/main';
 import { Footer } from './footer/footer';
 import { Service } from './main/service';
 import { Search } from './search/search';
+import { Page } from './page/page';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,11 +17,13 @@ import { Search } from './search/search';
     Header,
     Main,
     Footer,
-    Search
+    Search,
+    Page
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

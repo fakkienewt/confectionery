@@ -1,0 +1,29 @@
+ <div class="main-content">
+    <div class="title"
+        (click)="onClick()">Handcrafted with Love, Baked with Joy!</div>
+
+    <div class="container">
+        <img class="image"
+            src="{{item.image}}">
+
+        <div class="content-wrapper">
+            <div class="ingredients-block">
+                <div class="name">{{item.name}}</div>
+                <h2 id="ingredient">Ingredient:</h2>
+                <ul>
+                    <li *ngFor="let ingredient of item.ingredients"
+                        class="ingredient">
+                        {{ ingredient }}
+                    </li>
+                </ul>
+            </div>
+            <div class="price-button-block">
+                <div class="price">${{item.price}}</div>
+                <div class="button">Into a cart</div>
+            </div>
+        </div>
+    </div>
+    <div class="description-block">
+        <h2 id="description">Description:</h2>
+        <p>{{item.description}}</p>
+    </div>

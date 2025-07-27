@@ -107,6 +107,7 @@
     align-items: center;
     padding-top: 35px;
     width: 100%;
+    gap: 20px;
 }
 
 .image {
@@ -119,22 +120,20 @@
     font-size: 25px;
 }
 
-
 .button {
-    width: 100px;
-    padding: 10px;
-    background: #FFB5AB;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px 15px;
+    background: #FFB5AB;
     cursor: pointer;
     border-radius: 15px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    margin: 10px;
     font-size: 17px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
     color: white;
+    width: 100px;
     transition: transform 0.2s ease;
+    margin-left: 15px;
 }
 
 .button:hover {

@@ -18,8 +18,7 @@
             src="{{m.image}}">
         <div class="container">
             <div class="name">{{m.name}}</div>
-            <div class="price">${{m.price}}</div>
-            <div class="button">Order</div>
+            <div class="button" (click)="onClickNewPage(m.id)">Order</div>
         </div>
     </div>
 </div>
