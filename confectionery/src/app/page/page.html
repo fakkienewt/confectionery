@@ -1,29 +1,43 @@
- <div class="main-content">
-    <div class="title"
-        (click)="onClick()">Handcrafted with Love, Baked with Joy!</div>
+<div class="title"
+    (click)="onClick()">Handcrafted with Love, Baked with Joy!</div>
 
-    <div class="container">
-        <img class="image"
-            src="{{item.image}}">
+<div class="product-page">
+    <div class="product-container">
+        <h1 class="product-title">{{item.name}}</h1>
 
-        <div class="content-wrapper">
-            <div class="ingredients-block">
-                <div class="name">{{item.name}}</div>
-                <h2 id="ingredient">Ingredient:</h2>
-                <ul>
-                    <li *ngFor="let ingredient of item.ingredients"
-                        class="ingredient">
-                        {{ ingredient }}
-                    </li>
-                </ul>
+        <div class="product-content">
+            <div class="product-image-section">
+                <div class="product-image-wrapper">
+                    <img class="product-image"
+                        src="{{item.image}}"
+                        alt="{{item.name}}">
+                </div>
+
+                <div class="action-panel">
+                    <div class="product-price">${{item.price}}</div>
+                    <button class="add-to-cart-btn"
+                        (click)="onClickCart(item.id)">
+                        Add to cart <span class="cart-icon"></span>
+                    </button>
+                </div>
             </div>
-            <div class="price-button-block">
-                <div class="price">${{item.price}}</div>
-                <div class="button">Into a cart</div>
+
+            <div class="product-details">
+                <div class="ingredients-section">
+                    <h2 class="section-title">Ingredients</h2>
+                    <ul class="ingredients-list">
+                        <li *ngFor="let ingredient of item.ingredients"
+                            class="ingredient-item">
+                            <span class="ingredient-icon">🧁</span> {{ ingredient }}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="description-section">
+                    <h2 class="section-title">Description</h2>
+                    <p class="product-description">{{item.description}}</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="description-block">
-        <h2 id="description">Description:</h2>
-        <p>{{item.description}}</p>
-    </div>
+</div>

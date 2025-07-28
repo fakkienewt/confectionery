@@ -10,6 +10,7 @@ import { Service } from './main/service';
 import { Search } from './search/search';
 import { Page } from './page/page';
 import { RouterModule } from '@angular/router';
+import { Cart } from './cart/cart';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
     Main,
     Footer,
     Search,
-    Page
+    Page,
+    Cart,
   ],
   imports: [
     BrowserModule,

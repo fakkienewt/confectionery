@@ -30,11 +30,12 @@ export class Search implements OnInit {
     this.searchResults = savedResults ? JSON.parse(savedResults) : [];
   }
 
+  onClickNewPage(id: number): void {
+    this.router.navigate([`food/${id}`]);
+  }
+
   onClick(): void {
     this.router.navigate(['/']);
   }
 
-  onClickNewPage(id: number): void {
-    this.router.navigate([`food/${id}`]);
-  }
 }

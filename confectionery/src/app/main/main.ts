@@ -15,6 +15,7 @@ export class Main implements OnInit {
   categories: any[];
   afterClickOnCagegory: any;
   selectedCategoryId: number;
+  showAllCategories: boolean = false;
 
   constructor(
     public service: Service,
@@ -40,6 +41,10 @@ export class Main implements OnInit {
 
   onClickNewPage(id: number): void {
     this.router.navigate([`food/${id}`]);
+  }
+
+  onClick(): void {
+    this.router.navigate(['/']);
   }
 
 }

@@ -1,5 +1,8 @@
-
 export class Service {
+
+    constructor(){
+        // get storage
+    }
 
     getCategories(): { id: number, title: string, menu: any }[] {
         return this.categories.map(c => ({
@@ -54,28 +57,6 @@ export class Service {
                         "Cream cheese",
                         "Powdered sugar",
                         "Heavy cream"
-                    ]
-                },
-                {
-                    id: 3,
-                    image: "https://i.pinimg.com/236x/34/61/6c/34616c5ac5aeff62ad02187ee25ced30.jpg?nii=t",
-                    name: "Tropical Coconut Dream",
-                    description: "Transport yourself to a tropical paradise with our Coconut Dream cake. This luxurious cake features layers of ultra-moist coconut sponge soaked in coconut syrup, filled with coconut pastry cream and fresh pineapple compote. The exterior is covered in fluffy coconut Swiss meringue buttercream and toasted coconut flakes for texture. Each bite delivers a perfect harmony of sweet and tropical flavors that will make you feel like you're on vacation. The decoration features edible flowers and white chocolate seashells for a beachy vibe. Perfect for summer parties, bridal showers or anytime you need an escape. Contains real coconut in multiple forms for maximum flavor. Serves 14-16 people. Requires 36 hours notice.",
-                    price: 52.99,
-                    ingredients: [
-                        "Coconut flour",
-                        "All-purpose flour",
-                        "Coconut milk",
-                        "Coconut cream",
-                        "Shredded coconut",
-                        "Egg whites",
-                        "Granulated sugar",
-                        "Unsalted butter",
-                        "Fresh pineapple",
-                        "Lime zest",
-                        "Vanilla bean paste",
-                        "Cornstarch",
-                        "White chocolate"
                     ]
                 },
                 {
@@ -422,24 +403,6 @@ export class Service {
                         "Granulated sugar (for rolling)"
                     ]
                 },
-                {
-                    id: 20,
-                    image: "https://avatars.mds.yandex.net/i?id=47639dfe5e22ab9658d658e74a40d67f52b8b745-3596236-images-thumbs&n=13",
-                    name: "Almond Biscotti",
-                    description: "Our traditional Almond Biscotti are twice-baked to perfect crispness, ideal for dunking in coffee or dessert wine. These Italian-style cookies are packed with whole almonds and have a satisfying crunch with every bite. The recipe uses simple, high-quality ingredients to let the almond flavor shine. We add a hint of anise extract for authentic flavor, though this can be omitted upon request. These biscotti keep well, making them perfect for gift boxes, care packages or afternoon snacks. Delicious plain or dipped in dark chocolate. Sold by the dozen. Can be made with other nuts like pistachios or hazelnuts upon request. Perfect for those who prefer less sweet cookies.",
-                    price: 14.99,
-                    ingredients: [
-                        "All-purpose flour",
-                        "Whole almonds",
-                        "Granulated sugar",
-                        "Eggs",
-                        "Unsalted butter",
-                        "Vanilla extract",
-                        "Anise extract (optional)",
-                        "Baking powder",
-                        "Salt"
-                    ]
-                }
             ]
         },
         {
@@ -536,20 +499,6 @@ export class Service {
                         "Sea salt",
                         "Oreo cookies (for Cookies & Cream version)",
                         "Rainbow sprinkles (for Classic version)"
-                    ]
-                },
-                {
-                    id: 27,
-                    image: "https://i.pinimg.com/736x/6c/0b/7e/6c0b7ed921d37506582c0b1f1f0a37cc.jpg",
-                    name: "Chocolate Dipped Orange Peel",
-                    description: "These elegant Chocolate Dipped Orange Peels feature candied organic orange zest coated in premium dark chocolate. We carefully prepare the orange zest to remove bitterness while preserving the vibrant citrus flavor, then candy it slowly in sugar syrup. Each strip is hand-dipped in rich dark chocolate that complements the bright orange flavor perfectly. The contrast between the bittersweet chocolate, sweet candied peel and slight citrus tang is sophisticated and refreshing. These make perfect after-dinner treats, especially with coffee or dessert wines. Packaged in beautiful boxes that make them ideal for hostess gifts or special occasions. Shelf life of 3 weeks when stored in a cool, dry place. Also available in milk or white chocolate versions.",
-                    price: 19.99,
-                    ingredients: [
-                        "Organic oranges",
-                        "Dark chocolate (70% cocoa)",
-                        "Sugar",
-                        "Water",
-                        "Corn syrup"
                     ]
                 },
                 {
@@ -673,29 +622,6 @@ export class Service {
                         "Sea salt",
                         "Raw cacao powder (for chocolate version)",
                         "Mixed berries (for berry version)"
-                    ]
-                },
-                {
-                    id: 34,
-                    image: "https://avatars.mds.yandex.net/i?id=ed16c325984b499ac0063a2f4d75c23e3445b3ef-3675767-images-thumbs&n=13",
-                    name: "Sugar-Free Carrot Cake",
-                    description: "Our Sugar-Free Carrot Cake is sweetened naturally with dates and applesauce, making it suitable for diabetics or anyone reducing sugar intake. This moist cake is packed with fresh carrots, walnuts and warm spices like cinnamon and nutmeg. The cream cheese frosting uses sugar substitute and is lightly sweetened for balance. Despite being sugar-free, this cake doesn't compromise on flavor or texture - it's just as satisfying as the traditional version. Decorated with chopped walnuts and a sprinkle of cinnamon for simple elegance. Perfect for those managing blood sugar levels who still want to enjoy dessert. Serves 12-14 people. 24 hours notice recommended.",
-                    price: 41.99,
-                    ingredients: [
-                        "Whole wheat flour",
-                        "Almond flour",
-                        "Carrots",
-                        "Medjool dates",
-                        "Unsweetened applesauce",
-                        "Eggs",
-                        "Walnuts",
-                        "Coconut oil",
-                        "Cinnamon",
-                        "Nutmeg",
-                        "Ginger",
-                        "Cream cheese",
-                        "Sugar substitute",
-                        "Vanilla extract"
                     ]
                 },
                 {
@@ -983,23 +909,6 @@ export class Service {
                     ]
                 },
                 {
-                    id: 48,
-                    image: "https://dinnerthendessert.com/wp-content/uploads/2024/02/Shamrock-Cookies-15-1.jpg",
-                    name: "St. Patrick's Day Shamrock Cookies",
-                    description: "Celebrate the luck of the Irish with our St. Patrick's Day Shamrock Cookies, available throughout March. These buttery shortbread cookies are cut into shamrock shapes and decorated with green-tinted royal icing and gold sugar sprinkles. The shortbread has a delicate melt-in-your-mouth texture with just the right amount of sweetness. Decorations may include Celtic knot designs, gold coins or other festive motifs. Sold by the dozen. Perfect for St. Patrick's Day parties, office treats or classroom celebrations. Can be made with gluten-free flour upon request. 48 hours notice recommended for large orders.",
-                    price: 16.99,
-                    ingredients: [
-                        "All-purpose flour",
-                        "Butter",
-                        "Powdered sugar",
-                        "Vanilla extract",
-                        "Salt",
-                        "Royal icing",
-                        "Green food coloring",
-                        "Gold sugar crystals"
-                    ]
-                },
-                {
                     id: 49,
                     image: "https://i.pinimg.com/736x/cd/f8/5b/cdf85b19e697960a0683764c302dac42.jpg",
                     name: "Mother's Day Flower Cupcakes",
@@ -1044,198 +953,5 @@ export class Service {
                 }
             ]
         },
-        {
-            id: 6,
-            name: "Pastries & Desserts",
-            items: [
-                {
-                    id: 51,
-                    image: "https://i.pinimg.com/236x/2c/22/72/2c22727512d30a89eba5e3248465de81.jpg",
-                    name: "Classic French Croissants",
-                    description: "Our Classic French Croissants are made using traditional techniques that take three days to complete. The dough is laminated with premium European butter to create those signature flaky layers. Each croissant is golden brown with a crisp exterior that gives way to a tender, buttery interior with a honeycomb crumb structure. The aroma while baking is irresistible. Perfect with coffee for breakfast or as the base for sandwiches. We recommend enjoying them the same day for optimal texture, though they can be refreshed in the oven the next day. Sold by the half dozen or dozen. Also available as pain au chocolat (with chocolate batons) or almond croissants (filled with almond cream) upon request.",
-                    price: 18.99,
-                    ingredients: [
-                        "All-purpose flour",
-                        "European-style butter",
-                        "Milk",
-                        "Sugar",
-                        "Salt",
-                        "Yeast",
-                        "Egg (for egg wash)"
-                    ]
-                },
-                {
-                    id: 52,
-                    image: "https://avatars.mds.yandex.net/i?id=704d078052bd8c7739684ad76444b2b16b87a163-12528274-images-thumbs&n=13",
-                    name: "Apple Turnovers",
-                    description: "Our Apple Turnovers feature flaky puff pastry filled with spiced apple compote and sealed with a crisp sugar glaze. The apples are a mix of tart and sweet varieties, cooked with cinnamon, nutmeg and a touch of lemon juice to brighten the flavor. Each turnover is generously filled and baked until golden brown, with layers that shatter when you bite into them. The perfect balance of crisp pastry and tender apple filling makes these irresistible for breakfast or dessert. Best served warm, perhaps with a scoop of vanilla ice cream. Sold individually or by the half dozen. Also available with raisins or caramel drizzle upon request. Shelf life of 2 days for optimal texture.",
-                    price: 4.99,
-                    ingredients: [
-                        "Puff pastry",
-                        "Apples (Granny Smith and Honeycrisp)",
-                        "Brown sugar",
-                        "Cinnamon",
-                        "Nutmeg",
-                        "Lemon juice",
-                        "Cornstarch",
-                        "Butter",
-                        "Granulated sugar (for glaze)",
-                        "Egg (for egg wash)"
-                    ]
-                },
-                {
-                    id: 53,
-                    image: "https://www.spatuladesserts.com/wp-content/uploads/2025/02/Eclair-08875.jpg",
-                    name: "Chocolate Éclairs",
-                    description: "Our classic Chocolate Éclairs are a masterpiece of French patisserie. Each light choux pastry shell is piped full of vanilla bean pastry cream and topped with a glossy chocolate glaze. The choux is baked to perfection - crisp on the outside with a hollow interior ready to be filled. The pastry cream is smooth and not too sweet, allowing the chocolate glaze to shine. These elegant pastries require skill to make properly, with attention paid to every component. Best enjoyed the day they're made, when the choux is at its crispiest. Sold by the half dozen. Also available filled with coffee or chocolate pastry cream upon request.",
-                    price: 21.99,
-                    ingredients: [
-                        "Water",
-                        "Butter",
-                        "All-purpose flour",
-                        "Eggs",
-                        "Salt",
-                        "Whole milk",
-                        "Sugar",
-                        "Cornstarch",
-                        "Vanilla bean",
-                        "Egg yolks",
-                        "Dark chocolate",
-                        "Heavy cream"
-                    ]
-                },
-                {
-                    id: 54,
-                    image: "https://avatars.mds.yandex.net/i?id=b912b95d266314b3299ec54c842d028d_l-5207283-images-thumbs&n=13",
-                    name: "Berry Cream Cheese Danishes",
-                    description: "These beautiful Berry Cream Cheese Danishes feature flaky pastry topped with sweetened cream cheese and seasonal berries. The pastry is laminated to create dozens of delicate layers that shatter when bitten. The cream cheese filling is lightly sweetened with vanilla, providing the perfect base for juicy raspberries, blueberries or blackberries (depending on season). Finished with a light sugar glaze that adds shine without being overly sweet. These pastries are as delicious as they are photogenic - perfect for brunch, baby showers or as a special breakfast treat. Sold by the half dozen. Best enjoyed the same day they're made.",
-                    price: 19.99,
-                    ingredients: [
-                        "Puff pastry",
-                        "Cream cheese",
-                        "Sugar",
-                        "Vanilla extract",
-                        "Egg",
-                        "Mixed berries",
-                        "Cornstarch",
-                        "Lemon juice",
-                        "Powdered sugar",
-                        "Milk"
-                    ]
-                },
-                {
-                    id: 55,
-                    image: "https://avatars.mds.yandex.net/i?id=b99c5607b49376f4dd434e933db1a29a_l-5409935-images-thumbs&n=13",
-                    name: "Tiramisu",
-                    description: "Our authentic Tiramisu stays true to the classic Italian recipe with a few subtle improvements. Layers of espresso-soaked ladyfingers alternate with mascarpone cream that's light yet rich. We use freshly brewed espresso and a touch of marsala wine for authentic flavor. The mascarpone mixture is whipped to perfection - not too sweet with just the right amount of body. Finished with a dusting of cocoa powder that provides the perfect bittersweet contrast. Served in individual cups or as a large sharing dessert. Contains alcohol and caffeine. Must be kept refrigerated. Best consumed within 48 hours of preparation.",
-                    price: 8.99,
-                    ingredients: [
-                        "Ladyfinger cookies",
-                        "Mascarpone cheese",
-                        "Heavy cream",
-                        "Egg yolks",
-                        "Sugar",
-                        "Espresso",
-                        "Marsala wine",
-                        "Cocoa powder",
-                        "Vanilla extract",
-                        "Salt"
-                    ]
-                },
-                {
-                    id: 56,
-                    image: "https://avatars.mds.yandex.net/i?id=47e0606faab83f22e02ccf0a2518a60e_l-7736363-images-thumbs&n=13",
-                    name: "Cannoli",
-                    description: "Our traditional Sicilian Cannoli feature crisp, golden shells filled with sweet ricotta cream just before serving to maintain texture. The shells are made with a special dough containing marsala wine, then fried to perfection - light and crisp without being greasy. The filling is a perfect balance of creamy ricotta, powdered sugar, vanilla and mini chocolate chips. Each end is dipped in pistachios for crunch and visual appeal. These iconic Italian pastries are best enjoyed immediately after filling, when the shell is at its crispiest. Sold individually or by the half dozen. Can be made with different fillings (chocolate, pistachio or lemon) upon request.",
-                    price: 5.99,
-                    ingredients: [
-                        "All-purpose flour",
-                        "Sugar",
-                        "Butter",
-                        "Marsala wine",
-                        "Egg",
-                        "Cocoa powder",
-                        "Ricotta cheese",
-                        "Powdered sugar",
-                        "Vanilla extract",
-                        "Mini chocolate chips",
-                        "Chopped pistachios",
-                        "Vegetable oil (for frying)"
-                    ]
-                },
-                {
-                    id: 57,
-                    image: "https://i.pinimg.com/474x/f5/d9/ae/f5d9ae4c88f19287a957ff0e335ba557.jpg",
-                    name: "Fruit Tart",
-                    description: "Our beautiful Fruit Tart features a buttery shortcrust pastry filled with vanilla pastry cream and topped with an assortment of fresh seasonal fruits. The pastry is crisp yet tender, providing the perfect base for the creamy filling. The fruits are arranged in concentric circles for a stunning visual effect - typically including kiwi, strawberries, blueberries, raspberries and mango, depending on availability. The entire tart is glazed with apricot preserves for shine and to keep the fruit fresh. This dessert is as light and refreshing as it is beautiful, perfect for spring and summer gatherings. Available in small (6\") or large (9\") sizes. Best consumed the day it's made.",
-                    price: 24.99,
-                    ingredients: [
-                        "All-purpose flour",
-                        "Butter",
-                        "Powdered sugar",
-                        "Egg yolk",
-                        "Salt",
-                        "Whole milk",
-                        "Cornstarch",
-                        "Sugar",
-                        "Vanilla bean",
-                        "Assorted fresh fruits",
-                        "Apricot preserves"
-                    ]
-                },
-                {
-                    id: 58,
-                    image: "https://i.pinimg.com/736x/65/fc/64/65fc64cfd652f40a75454c917e06702c.jpg",
-                    name: "Chocolate Soufflé",
-                    description: "Our Chocolate Soufflé is a masterpiece of French dessert cuisine, available for pre-order and served fresh from the oven. Each individual ramekin contains a light, airy chocolate center with intense cocoa flavor. The exterior forms a delicate crust that gives way to a molten interior. Served immediately with a dusting of powdered sugar and optional vanilla bean ice cream or crème anglaise. The secret to our soufflé's success is premium dark chocolate and perfectly whipped egg whites. Requires precise timing - we'll provide exact baking instructions if taking home to bake. Also available in grand format for sharing. Contains raw egg. Must be baked immediately or frozen for later use.",
-                    price: 9.99,
-                    ingredients: [
-                        "Dark chocolate (70% cocoa)",
-                        "Butter",
-                        "Eggs",
-                        "Sugar",
-                        "All-purpose flour",
-                        "Salt",
-                        "Vanilla extract",
-                        "Powdered sugar"
-                    ]
-                },
-                {
-                    id: 59,
-                    image: "https://avatars.mds.yandex.net/i?id=63b1cd12e0bb31bf2001ccad867a9a7f_l-12569441-images-thumbs&n=13",
-                    name: "Baklava",
-                    description: "Our authentic Baklava features layers of crisp phyllo dough, butter and spiced nuts soaked in honey syrup. This Middle Eastern dessert is made with painstaking attention to each thin layer of phyllo, which becomes flaky and golden in the oven. The nut mixture typically combines walnuts, pistachios and almonds with cinnamon and cloves for warm spice notes. After baking, the entire pastry is drenched in citrus-infused honey syrup that soaks in to create the perfect balance of crisp and moist textures. Cut into diamond shapes for traditional presentation. Rich, sweet and incredibly satisfying in small portions. Shelf life of 1 week at room temperature.",
-                    price: 22.99,
-                    ingredients: [
-                        "Phyllo dough",
-                        "Walnuts",
-                        "Pistachios",
-                        "Almonds",
-                        "Butter",
-                        "Sugar",
-                        "Honey",
-                        "Cinnamon",
-                        "Cloves",
-                        "Lemon juice",
-                        "Orange blossom water"
-                    ]
-                },
-                {
-                    id: 60,
-                    image: "https://i.pinimg.com/736x/30/89/52/30895228f94052dcd07685b19864330b.jpg",
-                    name: "Crème Brûlée",
-                    description: "Our classic Crème Brûlée features rich vanilla custard with the signature crisp caramelized sugar top. The custard is made with heavy cream, egg yolks and real vanilla bean for luxurious texture and flavor. Each ramekin is torched to order, creating the perfect glass-like sugar crust that shatters when tapped with a spoon. The contrast between the crisp caramel and smooth, cool custard beneath is what makes this French dessert so iconic. Served in individual portions with a delicate vanilla shortbread cookie on the side. Also available in flavored variations: chocolate, lavender or citrus. Must be kept refrigerated until ready to torch and serve.",
-                    price: 7.99,
-                    ingredients: [
-                        "Heavy cream",
-                        "Egg yolks",
-                        "Sugar",
-                        "Vanilla bean",
-                        "Salt",
-                        "Turbinado sugar (for topping)"
-                    ]
-                }
-            ]
-        }
     ]
 };

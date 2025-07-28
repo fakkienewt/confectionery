@@ -24,15 +24,18 @@ export class Page implements OnInit {
     this.categories = this.service.getCategories();
   }
 
-  onClick(): void {
-    this.router.navigate(['/']);
-  }
-
   ngOnInit(): void {
     const allItems = this.service.getCategories().flatMap(category => category.menu);
     this.route.params.subscribe(params => {
       this.pId = +params['id'];
     });
     this.item = allItems.find(i => i.id === this.pId);
+  }
+  onClickCart(itemId: number): void {
+
+  }
+  
+  onClick(): void {
+    this.router.navigate(['/']);
   }
 }

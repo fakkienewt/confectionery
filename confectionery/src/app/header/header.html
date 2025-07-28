@@ -1,5 +1,12 @@
 <div id="header">
-    <input class="input" #inputValue
+    <img class="icon" src="/assets/icon.png" (click)="onClick()">
+    <input class="input"
+        #inputValue
         type="text">
-    <div class="button" (click)="onClickSearch(inputValue.value)">Search</div>
+    <div class="search"
+        (click)="onClickSearch(inputValue.value)">Search</div>
+    <div class="cart"
+        (click)="onClickSearch(inputValue.value)">Cart</div>
 </div>
+<!-- 
+ {{cartCountItems}} -->

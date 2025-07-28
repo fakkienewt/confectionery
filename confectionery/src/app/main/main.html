@@ -8,17 +8,24 @@
                 {{ category.title}}
             </div>
         </div>
-        <div class="menu-sort">
-            <div class="menu sort">Sort</div>
-        </div>
     </div>
-    <div *ngFor="let m of menu"
-        class="items">
-        <img class="image"
-            src="{{m.image}}">
-        <div class="container">
-            <div class="name">{{m.name}}</div>
-            <div class="button" (click)="onClickNewPage(m.id)">Order</div>
+    <div class="items-grid">
+        <div *ngFor="let m of menu"
+            class="item-card">
+            <div class="item-image-wrapper">
+                <img class="item-image"
+                    src="{{m.image}}"
+                    alt="{{m.name}}">
+            </div>
+            <div class="item-details">
+                <div class="item-name">{{m.name}}</div>
+                <div class="item-price">${{m.price}}</div>
+                <button class="order-button"
+                    (click)="onClickNewPage(m.id)">
+                    Order <span class="heart-icon">♥</span>
+                </button>
+            </div>
         </div>
     </div>
 </div>
+

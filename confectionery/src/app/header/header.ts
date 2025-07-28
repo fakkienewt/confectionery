@@ -10,6 +10,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class Header {
 
+  // get cartCountItems(): string {
+  //   const cartItemsCount = 1; // TODO: cartService.getItemsCount()
+  //   if (!cartItemsCount) {
+  //     return '';
+  //   }
+  //   return `( ${cartItemsCount} )`;
+  // }
+
   constructor(
     public service: Service,
     public router: Router,
@@ -26,8 +34,12 @@ export class Header {
     setTimeout(() => {
       localStorage.setItem('searchResults', JSON.stringify(results));
       this.router.navigate(['/search'], {
-        queryParams: { q: searchValue, r: Math.random() } 
+        queryParams: { q: searchValue, r: Math.random() }
       });
     }, 50);
+  }
+
+  onClick(): void {
+    this.router.navigate(['/']);
   }
 }
