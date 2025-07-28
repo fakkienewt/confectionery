@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Service } from '../main/service';
+import { CartService } from './cart-service';
+import { CartItem } from './CartItem';
 
 @Component({
   selector: 'app-cart',
@@ -8,14 +9,30 @@ import { Service } from '../main/service';
   templateUrl: './cart.html',
   styleUrl: './cart.scss'
 })
-export class Cart {
+export class Cart implements OnInit {
   constructor(
-    private route: ActivatedRoute,
-    private service: Service,
     public router: Router,
-  ) { }
+    public cartservice: CartService
+  ) {
+  }
 
-  onClick(): void {
-    this.router.navigate(['/']);
+  cartItems: CartItem[] = [];
+
+  ngOnInit(): void {
+    this.loadCartItems();
+  }
+
+  loadCartItems(): void {
+    this.cartItems = this.cartservice.items;
+  }
+
+  onClickMinus(itemId: number): void {
+    this.cartservice.onClickMinus(itemId);
+    this.loadCartItems();
+  }
+
+  onClickPlus(itemId: number) {
+    this.cartservice.plusItem(itemId);
+    this.loadCartItems();
   }
 }

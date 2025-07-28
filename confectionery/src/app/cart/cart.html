@@ -1,2 +1,24 @@
-<div class="title"
-    (click)="onClick()">Handcrafted with Love, Baked with Joy!</div>
+<div class="carts">
+    <div *ngFor="let item of cartItems"
+        class="item-card">
+        <div class="item-image-wrapper">
+            <img class="item-image"
+                src="{{item.img}}">
+        </div>
+
+        <div class="item-details">
+            <div class="item-name">{{item.title}}</div>
+            <div class="item-price">${{item.price}}</div>
+            <button class="button">
+                <div class="qty">{{item.qty}}</div>
+                <div class="plus-minus">
+                    <div class="plus" (click)="onClickPlus(item.itemId)">+</div>
+                    <div class="minus"
+                        (click)="onClickMinus(item.itemId)">-</div>
+                </div>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- <span class="heart-icon">♥</span> -->

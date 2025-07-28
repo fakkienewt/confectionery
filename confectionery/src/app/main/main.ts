@@ -43,8 +43,4 @@ export class Main implements OnInit {
     this.router.navigate([`food/${id}`]);
   }
 
-  onClick(): void {
-    this.router.navigate(['/']);
-  }
-
 }

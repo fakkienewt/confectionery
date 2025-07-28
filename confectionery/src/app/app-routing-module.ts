@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { Search } from './search/search';
 import { Main } from './main/main';
 import { Page } from './page/page';
+import { Cart } from './cart/cart';
 
 const routes: Routes = [
 
@@ -11,6 +12,8 @@ const routes: Routes = [
   { path: 'search', component: Search },
 
   { path: 'food/:id', component: Page },
+
+  { path: 'cart', component: Cart}
 
 ];
 

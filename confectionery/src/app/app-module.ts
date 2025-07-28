@@ -11,6 +11,8 @@ import { Search } from './search/search';
 import { Page } from './page/page';
 import { RouterModule } from '@angular/router';
 import { Cart } from './cart/cart';
+import { Title } from './title/title';
+import { CartService } from './cart/cart-service';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { Cart } from './cart/cart';
     Search,
     Page,
     Cart,
+    Title,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { Cart } from './cart/cart';
   providers: [
     provideBrowserGlobalErrorListeners(),
     Service,
+    CartService
   ],
   bootstrap: [App]
 })

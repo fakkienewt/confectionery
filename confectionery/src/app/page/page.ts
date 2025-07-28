@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Service } from '../main/service';
-
+import { CartService } from '../cart/cart-service';
 @Component({
   selector: 'app-page',
   standalone: false,
@@ -20,7 +20,7 @@ export class Page implements OnInit {
     private route: ActivatedRoute,
     private service: Service,
     public router: Router,
-  ) {
+    public cartservice: CartService,) {
     this.categories = this.service.getCategories();
   }
 
@@ -31,11 +31,8 @@ export class Page implements OnInit {
     });
     this.item = allItems.find(i => i.id === this.pId);
   }
-  onClickCart(itemId: number): void {
 
-  }
-  
-  onClick(): void {
-    this.router.navigate(['/']);
+  onClickCart(itemId: number): void {
+    this.cartservice.addToCart(itemId);
   }
 }

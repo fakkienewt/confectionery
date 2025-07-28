@@ -9,15 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './header.scss'
 })
 export class Header {
-
-  // get cartCountItems(): string {
-  //   const cartItemsCount = 1; // TODO: cartService.getItemsCount()
-  //   if (!cartItemsCount) {
-  //     return '';
-  //   }
-  //   return `( ${cartItemsCount} )`;
-  // }
-
+  
   constructor(
     public service: Service,
     public router: Router,
@@ -41,5 +33,9 @@ export class Header {
 
   onClick(): void {
     this.router.navigate(['/']);
+  }
+
+  onClickCart(): void {
+    this.router.navigate([`cart`]);
   }
 }

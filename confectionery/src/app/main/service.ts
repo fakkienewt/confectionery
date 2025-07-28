@@ -1,7 +1,6 @@
 export class Service {
 
     constructor(){
-        // get storage
     }
 
     getCategories(): { id: number, title: string, menu: any }[] {
