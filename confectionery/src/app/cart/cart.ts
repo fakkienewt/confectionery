@@ -7,7 +7,7 @@ import { CartItem } from './CartItem';
   selector: 'app-cart',
   standalone: false,
   templateUrl: './cart.html',
-  styleUrl: './cart.scss'
+  styleUrl: './cart.scss',
 })
 export class Cart implements OnInit {
   constructor(
@@ -17,6 +17,7 @@ export class Cart implements OnInit {
   }
 
   cartItems: CartItem[] = [];
+  sum: number = 0;
 
   ngOnInit(): void {
     this.loadCartItems();
@@ -34,5 +35,13 @@ export class Cart implements OnInit {
   onClickPlus(itemId: number) {
     this.cartservice.plusItem(itemId);
     this.loadCartItems();
+  }
+
+  displaySum(): number {
+    let sum = 0;
+    for (const item of this.cartItems) {
+      sum += item.price * item.qty;
+    }
+    return sum;
   }
 }

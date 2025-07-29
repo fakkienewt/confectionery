@@ -1,24 +1,43 @@
-<div class="carts">
-    <div *ngFor="let item of cartItems"
-        class="item-card">
-        <div class="item-image-wrapper">
-            <img class="item-image"
-                src="{{item.img}}">
+<div class="moe-cart-container">
+    <div *ngIf="cartItems.length"
+        class="moe-cart-content">
+        <div class="moe-items-row">
+            <div *ngFor="let item of cartItems"
+                class="moe-item">
+                <div class="moe-image-box">
+                    <img [src]="item.img"
+                        [alt]="item.title"
+                        class="moe-item-img">
+                </div>
+                <div class="moe-item-info">
+                    <h3 class="moe-title">{{item.title}}</h3>
+                    <p class="moe-price">${{item.price | number:'1.2-2'}}</p>
+                    <div class="moe-qty-controls">
+                        <button class="moe-qty-btn moe-minus"
+                            (click)="onClickMinus(item.itemId)">−</button>
+                        <span class="moe-quantity">{{item.qty}}</span>
+                        <button class="moe-qty-btn moe-plus"
+                            (click)="onClickPlus(item.itemId)">+</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="item-details">
-            <div class="item-name">{{item.title}}</div>
-            <div class="item-price">${{item.price}}</div>
-            <button class="button">
-                <div class="qty">{{item.qty}}</div>
-                <div class="plus-minus">
-                    <div class="plus" (click)="onClickPlus(item.itemId)">+</div>
-                    <div class="minus"
-                        (click)="onClickMinus(item.itemId)">-</div>
-                </div>
-            </button>
+        <div class="moe-checkout">
+            <div class="moe-total">
+                Total: ${{displaySum()}}
+            </div>
+            <button class="moe-checkout-btn">Checkout (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</button>
+        </div>
+    </div>
+    <div *ngIf="!cartItems.length"
+        class="empty-cart-wrapper">
+        <div class="empty-cart-container">
+            <div class="speech-bubble-left">
+                <h1 class="empty-cart-text">Nyaa~ your cart is empty!</h1>
+            </div>
+            <img class="anime-girl"
+                src="/assets/girl2.png">
         </div>
     </div>
 </div>
-
-<!-- <span class="heart-icon">♥</span> -->

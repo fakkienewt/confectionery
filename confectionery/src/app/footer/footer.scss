@@ -1,0 +1,109 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    background: #FFF9F9;
+    color: #FF9AA2;
+    padding: 1.5rem;
+    margin-top: auto;
+    width: 1080px;
+    height: 170px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -5px 15px rgba(255, 154, 162, 0.1);
+    margin-top: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 2;
+}
+
+.social-link {
+    text-decoration: none;
+}
+
+.social-button {
+    padding: 8px 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    border: 2px solid #FF9AA2;
+    color: #FF9AA2;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    animation: pulse 3s infinite;
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 214, 182, 0.7);
+}
+
+.social-button.tiktok {
+    background-color: rgba(255, 183, 178, 0.7);
+    animation-delay: 0.5s;
+}
+
+.social-button.linkedin {
+    animation-delay: 1s;
+}
+
+.social-button.github {
+    background-color: rgba(255, 183, 178, 0.7);
+    animation-delay: 1.5s;
+}
+
+.footer-text {
+    font-size: 14px;
+    color: #FF9AA2;
+    z-index: 2;
+    animation: fadeIn 1s ease-out;
+    margin-top: 20px;
+    text-shadow: 0 0 5px rgba(255, 154, 162, 0.3);
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 154, 162, 0.2);
+    background-color: rgba(255, 183, 178, 0.9);
+}

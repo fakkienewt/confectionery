@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Service } from '../main/service';
 import { CartService } from '../cart/cart-service';
+import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-page',
   standalone: false,
@@ -9,6 +11,10 @@ import { CartService } from '../cart/cart-service';
   styleUrl: './page.scss'
 })
 export class Page implements OnInit {
+
+  @ViewChild(ToastContainerDirective, { static: true })
+  toastContainer: ToastContainerDirective;
+
 
   menuItem: any;
   categoryId: number = 0;
@@ -20,7 +26,8 @@ export class Page implements OnInit {
     private route: ActivatedRoute,
     private service: Service,
     public router: Router,
-    public cartservice: CartService,) {
+    public cartservice: CartService,
+    private toastr: ToastrService) {
     this.categories = this.service.getCategories();
   }
 
@@ -34,5 +41,6 @@ export class Page implements OnInit {
 
   onClickCart(itemId: number): void {
     this.cartservice.addToCart(itemId);
+    this.toastr.success('The product has been added to the cart!');
   }
 }

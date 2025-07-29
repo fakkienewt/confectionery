@@ -29,12 +29,13 @@ export class Main implements OnInit {
   }
 
   loadAllMenu() {
-    const categories = this.service.getCategories();
-    this.menu = categories.flatMap(category => category.menu);
+    const firstCategoryId = this.service.selectedCategoryId;
+    this.onCategoryClick(firstCategoryId);
   }
 
   onCategoryClick(categoryId: number): void {
-    this.selectedCategoryId = categoryId;
+    this.service.saveSelectedCategoryId(categoryId);
+    this.selectedCategoryId = this.service.selectedCategoryId;
     this.afterClickOnCagegory = this.categories.find(c => c.id === this.selectedCategoryId);
     this.menu = this.afterClickOnCagegory.menu;
   }

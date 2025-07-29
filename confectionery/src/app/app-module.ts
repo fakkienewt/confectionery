@@ -13,6 +13,8 @@ import { RouterModule } from '@angular/router';
 import { Cart } from './cart/cart';
 import { Title } from './title/title';
 import { CartService } from './cart/cart-service';
+import { provideToastr, ToastrModule, ToastrService } from 'ngx-toastr';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,12 +30,22 @@ import { CartService } from './cart/cart-service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true
+    }),
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
     Service,
-    CartService
+    CartService,
+    provideAnimations(),
+    provideToastr(),
+    ToastrService
   ],
   bootstrap: [App]
 })

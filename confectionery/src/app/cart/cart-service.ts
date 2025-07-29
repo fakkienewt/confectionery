@@ -10,6 +10,7 @@ const CART_STORAGE_NAME = 'cart';
 export class CartService {
 
   items: CartItem[] = [];
+  sumItems: number;
 
   constructor(private service: Service) {
     this.loadCart();
@@ -40,7 +41,7 @@ export class CartService {
     const itm = this.items.find(i => i.itemId === itemId);
     if (itm !== undefined) {
       itm.qty--;
-      if (itm.qty <= 0) { 
+      if (itm.qty <= 0) {
         this.items = this.items.filter(i => i.itemId !== itemId);
       }
     }

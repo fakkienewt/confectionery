@@ -3,6 +3,7 @@
         <div class="categories">
             <div *ngFor="let category of categories"
                 class="menu"
+                [class.is-selected]="category.id === selectedCategoryId"
                 (click)="onCategoryClick(category.id)">
                 {{ category.title}}
             </div>
@@ -13,8 +14,7 @@
             class="item-card">
             <div class="item-image-wrapper">
                 <img class="item-image"
-                    src="{{m.image}}"
-                    alt="{{m.name}}">
+                    src="{{m.image}}">
             </div>
             <div class="item-details">
                 <div class="item-name">{{m.name}}</div>

@@ -1,6 +1,22 @@
 export class Service {
+    selectedCategoryId: number;
 
-    constructor(){
+    constructor() {
+        this.loadSelectedCategoryId();
+    }
+
+    loadSelectedCategoryId(): void {
+        const cartData = localStorage.getItem('selectedCategory');
+        if (!!cartData) {
+            this.selectedCategoryId = +cartData;
+        } else {
+            this.selectedCategoryId = this.getCategories()[0].id;
+        }
+    }
+
+    saveSelectedCategoryId(selectedCategoryId: number): void {
+        this.selectedCategoryId = selectedCategoryId;
+        localStorage.setItem('selectedCategory', selectedCategoryId.toString());
     }
 
     getCategories(): { id: number, title: string, menu: any }[] {
