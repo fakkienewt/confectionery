@@ -15,6 +15,7 @@ import { Title } from './title/title';
 import { CartService } from './cart/cart-service';
 import { provideToastr, ToastrModule, ToastrService } from 'ngx-toastr';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+import { Payment } from './payment/payment';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-br
     Page,
     Cart,
     Title,
+    Payment,
   ],
   imports: [
     BrowserModule,

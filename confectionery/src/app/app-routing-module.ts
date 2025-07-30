@@ -4,6 +4,7 @@ import { Search } from './search/search';
 import { Main } from './main/main';
 import { Page } from './page/page';
 import { Cart } from './cart/cart';
+import { Payment } from './payment/payment';
 
 const routes: Routes = [
 
@@ -13,7 +14,9 @@ const routes: Routes = [
 
   { path: 'food/:id', component: Page },
 
-  { path: 'cart', component: Cart}
+  { path: 'cart', component: Cart},
+
+  {path: 'cart', component: Payment}
 
 ];
 

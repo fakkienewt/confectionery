@@ -1,21 +1,30 @@
-<div class="items"
-    *ngFor="let result of searchResults">
-    <img class="image"
-        src="{{result.image}}">
-    <div class="container">
-        <div class="name">{{result.name}}</div>
-        <div class="button"
-            (click)="onClickNewPage(result.id)">Watch</div>
-    </div>
-</div>
-
-<div *ngIf="!searchResults.length"
-    class="not-found-wrapper">
-    <div class="not-found-container">
-        <div class="speech-bubble-left">
-            <h1 class="not-found-text">Nothing found!<br>Please try again.</h1>
+<div class="search-results-container">
+    <div *ngIf="searchResults.length"
+        class="results-grid">
+        <div *ngFor="let result of searchResults"
+            class="result-card">
+            <img class="result-image"
+                src="{{result.image}}"
+                alt="{{result.name}}">
+            <div class="result-details">
+                <div class="result-name">{{result.name}}</div>
+                <div class="result-price">${{result.price}}</div>
+                <button class="result-button"
+                    (click)="onClickNewPage(result.id)">
+                    Watch <span class="heart-icon">♥</span>
+                </button>
+            </div>
         </div>
-        <img class="anime-image"
-            src="/assets/girl2.png">
+    </div>
+
+    <div *ngIf="!searchResults.length"
+        class="not-found-wrapper">
+        <div class="not-found-container">
+            <div class="speech-bubble-left">
+                <h1 class="not-found-text">Nothing found!<br>Please try again.</h1>
+            </div>
+            <img class="anime-image"
+                src="/assets/girl2.png">
+        </div>
     </div>
 </div>

@@ -11,7 +11,7 @@
                 </div>
                 <div class="moe-item-info">
                     <h3 class="moe-title">{{item.title}}</h3>
-                    <p class="moe-price">${{item.price | number:'1.2-2'}}</p>
+                    <p class="moe-price">${{item.price}}</p>
                     <div class="moe-qty-controls">
                         <button class="moe-qty-btn moe-minus"
                             (click)="onClickMinus(item.itemId)">−</button>
@@ -27,16 +27,16 @@
             <div class="moe-total">
                 Total: ${{displaySum()}}
             </div>
-            <button class="moe-checkout-btn">Checkout (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</button>
+            <button class="moe-checkout-btn">Pay</button>
         </div>
     </div>
     <div *ngIf="!cartItems.length"
-        class="empty-cart-wrapper">
-        <div class="empty-cart-container">
+        class="not-found-wrapper">
+        <div class="not-found-container">
             <div class="speech-bubble-left">
-                <h1 class="empty-cart-text">Nyaa~ your cart is empty!</h1>
+                <h1 class="not-found-text">Nyaa~! Your cart is empty!</h1>
             </div>
-            <img class="anime-girl"
+            <img class="anime-image"
                 src="/assets/girl2.png">
         </div>
     </div>
