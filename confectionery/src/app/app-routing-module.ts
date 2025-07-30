@@ -16,7 +16,9 @@ const routes: Routes = [
 
   { path: 'cart', component: Cart},
 
-  {path: 'cart', component: Payment}
+  {path: 'payment/money', component: Payment},
+
+  {path: 'cart', component: Cart}
 
 ];
 

@@ -27,7 +27,7 @@
             <div class="moe-total">
                 Total: ${{displaySum()}}
             </div>
-            <button class="moe-checkout-btn">Pay</button>
+            <button class="moe-checkout-btn" (click)="onClickPay()">Pay</button>
         </div>
     </div>
     <div *ngIf="!cartItems.length"

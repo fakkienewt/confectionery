@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Service } from './service';
 
 @Component({
@@ -19,8 +19,7 @@ export class Main implements OnInit {
 
   constructor(
     public service: Service,
-    public router: Router,
-    private route: ActivatedRoute) {
+    public router: Router) {
     this.categories = this.service.getCategories();
   }
 

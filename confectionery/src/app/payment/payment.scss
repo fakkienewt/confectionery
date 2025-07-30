@@ -1,0 +1,260 @@
+:host {
+    display: block;
+    min-height: calc(80vh - 130px);
+    position: relative;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.moe-payment-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #5E5E5E;
+
+    .moe-payment-content {
+        background: #FFF9FA;
+        border-radius: 40px;
+        padding: 40px;
+        box-shadow: 0 15px 40px rgba(255, 182, 193, 0.3);
+    }
+
+    .moe-payment-header {
+        text-align: center;
+        margin-bottom: 40px;
+
+        .moe-title {
+            font-size: 35px;
+            color: #FF9AA2;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(255, 154, 162, 0.2);
+        }
+
+        .moe-subtitle {
+            font-size: 20px;
+            color: #A5A5A5;
+        }
+    }
+
+    .moe-payment-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .moe-step {
+        background: white;
+        border-radius: 30px;
+        padding: 30px;
+        box-shadow: 0 10px 25px rgba(255, 182, 193, 0.2);
+
+        .moe-step-title {
+            font-size: 26px;
+            color: #FF9AA2;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px dashed #FFD1DC;
+        }
+    }
+
+    .moe-delivery-options {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .moe-option {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px;
+            border-radius: 25px;
+            background: #FFF0F2;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: #FFE5E8;
+                transform: translateY(-3px);
+            }
+
+            input[type="radio"] {
+                width: 25px;
+                height: 25px;
+                accent-color: #FF9AA2;
+            }
+
+            .moe-option-content {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .moe-option-title {
+                font-size: 23px;
+                color: #FF7E8E;
+                font-weight: bold;
+            }
+
+            .moe-option-desc {
+                font-size: 17px;
+                color: #A5A5A5;
+            }
+        }
+    }
+
+    .moe-payment-form {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .moe-form-row {
+            display: flex;
+            gap: 25px;
+
+            .moe-form-group {
+                flex: 1;
+            }
+        }
+
+        .moe-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            label {
+                font-size: 20px;
+                color: #FF9AA2;
+            }
+
+            .moe-input {
+                padding: 13px 25px;
+                border: 2px solid #FFD1DC;
+                border-radius: 20px;
+                font-size: 20px;
+                font-family: 'Comic Sans MS', cursive, sans-serif;
+                transition: all 0.3s ease;
+
+                &:focus {
+                    outline: none;
+                    border-color: #FF9AA2;
+                    box-shadow: 0 0 0 3px rgba(255, 154, 162, 0.3);
+                }
+
+                &::placeholder {
+                    color: #D3D3D3;
+                }
+            }
+        }
+    }
+
+    .moe-order-summary {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .moe-summary-item {
+            padding: 15px 0;
+            border-bottom: 2px dashed #FFD1DC;
+
+            .moe-summary-info {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .moe-summary-name {
+                font-size: 20px;
+                color: #5E5E5E;
+            }
+
+            .moe-summary-price {
+                font-size: 22px;
+                color: #FF9AA2;
+                font-weight: bold;
+            }
+        }
+
+        .moe-total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            font-size: 28px;
+            color: #FF9AA2;
+            font-weight: bold;
+
+            .moe-total-price {
+                font-size: 32px;
+                color: #FF7E8E;
+            }
+        }
+    }
+
+    .moe-payment-actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+
+        .moe-back-btn {
+            background: #FFD1DC;
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 22px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            box-shadow: 0 5px 15px rgba(255, 154, 162, 0.2);
+
+            &:hover {
+                background: #FFB7C5;
+                transform: translateY(-3px);
+            }
+        }
+
+        .moe-pay-btn {
+            background: #FF9AA2;
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            box-shadow: 0 8px 20px rgba(255, 154, 162, 0.4);
+
+            &:hover {
+                background: #FF8090;
+                transform: translateY(-3px) scale(1.05);
+                box-shadow: 0 12px 25px rgba(255, 154, 162, 0.5);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .moe-payment-content {
+        padding: 25px !important;
+    }
+
+    .moe-step {
+        padding: 20px !important;
+    }
+
+    .moe-form-row {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .moe-payment-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

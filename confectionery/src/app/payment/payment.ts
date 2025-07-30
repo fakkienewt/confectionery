@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart/cart-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -8,4 +10,12 @@ import { Component } from '@angular/core';
 })
 export class Payment {
 
+  constructor(public cartservice: CartService,
+    public router: Router) {
+
+  }
+
+  OnClickBack(): void {
+    this.router.navigate(['cart']);
+  }
 }

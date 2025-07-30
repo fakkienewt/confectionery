@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { CartService } from './cart-service';
 import { CartItem } from './CartItem';
 
@@ -10,6 +10,7 @@ import { CartItem } from './CartItem';
   styleUrl: './cart.scss',
 })
 export class Cart implements OnInit {
+
   constructor(
     public router: Router,
     public cartservice: CartService
@@ -17,7 +18,6 @@ export class Cart implements OnInit {
   }
 
   cartItems: CartItem[] = [];
-  sum: number = 0;
 
   ngOnInit(): void {
     this.loadCartItems();
@@ -38,10 +38,10 @@ export class Cart implements OnInit {
   }
 
   displaySum(): number {
-    let sum = 0;
-    for (const item of this.cartItems) {
-      sum += item.price * item.qty;
-    }
-    return sum;
+    return this.cartservice.countSum();
+  }
+
+  onClickPay(): void {
+    this.router.navigate(['payment/money']);
   }
 }

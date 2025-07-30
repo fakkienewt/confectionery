@@ -56,6 +56,16 @@ export class CartService {
     this.saveCart();
   }
 
+  countSum(): number {
+    let sum = 0;
+    for (const item of this.items) {
+      sum += item.price * item.qty;
+      this.sumItems = sum;
+      this.saveCart();
+    }
+    return sum;
+  }
+
   private saveCart() {
     localStorage.setItem(CART_STORAGE_NAME, JSON.stringify(this.items));
   }
@@ -63,5 +73,6 @@ export class CartService {
   private loadCart() {
     const cartData = localStorage.getItem(CART_STORAGE_NAME);
     this.items = cartData ? JSON.parse(cartData) : [];
+    this.countSum();
   }
 }

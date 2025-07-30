@@ -1,1 +1,88 @@
-<p>payment works!</p>
+<div class="moe-payment-container">
+    <div *ngIf="cartservice.items.length"
+        class="moe-payment-content">
+        <div class="moe-payment-header">
+            <h1 class="moe-title">Payment Time! (◕‿◕✿)</h1>
+            <div class="moe-subtitle">Complete your sweet order nya~!</div>
+        </div>
+
+        <div class="moe-payment-steps">
+            <div class="moe-step">
+                <h2 class="moe-step-title">1. Delivery Method ૮ ˶ᵔ ᵕ ᵔ˶ ა</h2>
+                <div class="moe-delivery-options">
+                    <label class="moe-option">
+                        <input type="radio"
+                            name="delivery"
+                            checked>
+                        <span class="moe-option-content">
+                            <span class="moe-option-title">Pickup in Store</span>
+                            <span class="moe-option-desc">Come get your sweets yourself (｡•̀ᴗ-)✧</span>
+                        </span>
+                    </label>
+                    <label class="moe-option">
+                        <input type="radio"
+                            name="delivery">
+                        <span class="moe-option-content">
+                            <span class="moe-option-title">Delivery</span>
+                            <span class="moe-option-desc">We'll bring happiness to your door ♡(>ᴗ•)</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="moe-step">
+                <h2 class="moe-step-title">2. Payment Details (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</h2>
+                <div class="moe-payment-form">
+                    <div class="moe-form-group">
+                        <label>Card Number</label>
+                        <input type="text"
+                            placeholder="1234 5678 9012 3456"
+                            class="moe-input">
+                    </div>
+                    <div class="moe-form-row">
+                        <div class="moe-form-group">
+                            <label>Expiry Date</label>
+                            <input type="text"
+                                placeholder="MM/YY"
+                                class="moe-input">
+                        </div>
+                        <div class="moe-form-group">
+                            <label>CVV</label>
+                            <input type="text"
+                                placeholder="123"
+                                class="moe-input">
+                        </div>
+                    </div>
+                    <div class="moe-form-group">
+                        <label>Cardholder Name</label>
+                        <input type="text"
+                            placeholder="Your name!"
+                            class="moe-input">
+                    </div>
+                </div>
+            </div>
+
+            <div class="moe-step">
+                <h2 class="moe-step-title">3. Order Summary (๑˘ᴗ˘๑)</h2>
+                <div class="moe-order-summary">
+                    <div *ngFor="let item of cartservice.items"
+                        class="moe-summary-item">
+                        <div class="moe-summary-info">
+                            <span class="moe-summary-name">{{item.title}} ×{{item.qty}}</span>
+                            <span class="moe-summary-price">${{item.price * item.qty}}</span>
+                        </div>
+                    </div>
+                    <div class="moe-total-row">
+                        <span>Total:</span>
+                        <span class="moe-total-price">${{cartservice.sumItems}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="moe-payment-actions">
+            <button class="moe-back-btn" (click)="OnClickBack()">Back to Cart</button>
+            <button class="moe-pay-btn">Complete Payment</button>
+        </div>
+    </div>
+</div>
